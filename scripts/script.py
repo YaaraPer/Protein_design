@@ -35,3 +35,18 @@ while (num_seq < 1 or num_seq > 1000):
 
 #פתיחת קובץ תוצאות
 RandProtSeq = open('results/Out_RandProtSeq.txt', 'w')
+
+# הגדרת set שאליו נכנסים כל הרצפים שנוצרו כדי למנוע כפילויות
+protein_sequence = set()
+while len(protein_sequence) < num_seq:
+    new_seq = "M"  # מתחיל עם מתיונין כל רצף
+    new_seq += ''.join(generate_random_amino_acids())  # הוספת רצף חומצות אמינו אקראי
+
+
+    #בדיקה אם הרצף הנוכחי כבר קיים ב set, אם לא כותבים אותו לקובץ התוצאות
+    if new_seq not in protein_sequence:
+        protein_sequence.add(new_seq)
+
+
+        RandProtSeq.write(">Rand_Prot" + str(len(protein_sequence)) + "\n")
+        RandProtSeq.write(new_seq + "\n")  # כתיבת הרצף לקובץ
