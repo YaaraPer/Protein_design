@@ -26,7 +26,7 @@ def generate_random_amino_acids():
     random.shuffle(amino_acids_seq_list)
     return amino_acids_seq_list 
 
-# תוכנית ראשית
+# תכנית ראשית
 num_seq = int(input("Please indicate how many random protein sequences you need (1-1000)?"))
 # בדיקת קלט שאינו תקין
 while (num_seq < 1 or num_seq > 1000):
