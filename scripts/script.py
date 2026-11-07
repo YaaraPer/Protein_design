@@ -25,3 +25,4 @@ def generate_random_amino_acids():
 
     random.shuffle(amino_acids_seq_list)
     return amino_acids_seq_list 
+
